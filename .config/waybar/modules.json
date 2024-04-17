@@ -1,0 +1,9 @@
+{
+	// Logo
+	"custom/arch": {
+		"format": "",
+		"on-click": "rofi -show drun",
+		"on-click-right": "~/.config/keybindings.txt",
+		"tooltip": false
+	},
+}
