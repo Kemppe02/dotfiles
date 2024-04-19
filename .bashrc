@@ -11,3 +11,6 @@ PS1='\W $ '   #'[\u@\h \W]\$ '
 
 # Config alias for dotfiles git repository
 alias config='/usr/bin/git --git-dir=/home/axel/dotfiles --work-tree=/home/axel'
+
+# Starship prompt
+eval "$(starship init bash)"
