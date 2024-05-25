@@ -1,14 +1,15 @@
-# Insert blank line between prompts
+# Add blank line
 add_newline = true
 
-# Follow up symbol
-[character]
-#success_symbol = '[➜](bold green)'
+# 
+"$schema" = 'https://starship.rs/config-schema.json'
 
-format = '''
-[┌](bold green)$directory$rust$package
-[└─>](bold green) '''
+format ="""
+[┌──](bold green)$directory$rust$package$git_branch$git_status$python
+[└─>](bold green)"""
 
-# Disable package module
 [package]
-disabled = true
+disabled = false
+
+[python]
+symbol = ' '

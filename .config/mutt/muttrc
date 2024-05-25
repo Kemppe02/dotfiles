@@ -5,8 +5,8 @@ set folder = "imaps://axelkemppe@outlook.com@outlook.office365.com:993"
 set smtp_url = "smtp://axelkemppe@outlook.com@smtp-mail.outlook.com:587"
 
 # Auto input password
-set imap_pass = "5xh!@u4%e4oU&^q3h%9NCbb2%WcthT"
-set smtp_pass = "5xh!@u4%e4oU&^q3h%9NCbb2%WcthT"
+set imap_pass = '5xh!@u4%e4oU&^q3h%9NCbb2%WcthT'
+set smtp_pass = '5xh!@u4%e4oU&^q3h%9NCbb2%WcthT''
 
 # User info
 set from = "axelkemppe@outlook.com"
