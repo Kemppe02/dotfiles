@@ -6,4 +6,7 @@ Plug 'tpope/vim-fugitive'
 "Surrond, ex. {}[]()
 Plug 'tpope/vim-surround'
 
+" Colorize Hexcodes eg. #012345
+Plug 'ap/vim-css-color'
+
 call plug#end()

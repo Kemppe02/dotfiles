@@ -54,6 +54,10 @@ set showmatch
 
 "set clipboard=unnamedplus
 
+set wildmenu
+
+let g:netrw_banner=0
+
 " Create pair
 inoremap " ""<left>
 inoremap ' ''<left>
