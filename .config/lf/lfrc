@@ -1,0 +1,77 @@
+set ratios 1:2:3
+# Show hidden files
+set hidden false
+
+set ignorecase true
+set icons true
+
+set cursorpreviewfmt "\033[7;2m"
+
+set scrolloff 10
+
+# Unset default mapping
+map m
+map q
+
+# Map functions
+map q quit
+map <enter> shell
+map a mark-save
+map c clear
+map md makeDir
+map mf makeFile
+map r push :rename<space>
+map R reload
+map DD delete
+map xq $$SHELL # auto cd and quit
+map w wall
+map xt extract
+map . set hidden!
+
+# Map movements
+map gd cd ~/downloads
+map gD cd ~/documents
+map gi cd ~/images
+map gv cd ~/videos
+map gs cd ~/school
+
+# Rename file
+cmd rename %[ -e $1 ] && printf "file exists" || mv $f $1
+
+# Delete file using Cowsay program
+cmd delete ${{
+	/home/axel/.config/lf/cowDelete.sh $fx
+}}
+
+# Create directory
+cmd makeDir ${{
+	printf "Directory Name: "
+	read ans
+	mkdir $ans
+}}
+
+# Create file
+cmd makeFile ${{
+	printf "Filename: "
+	read ans
+	touch $ans
+}}
+
+# Unarchive using correct tool
+cmd extract ${{
+	case "$f" in
+		*.zip) unzip "$f" ;;
+		*.tar.gz) tar -xzvf "$f" ;;
+		*.tar.bz2) tar -xjvf "$f" ;;
+		*.tar) tar -xvf "$f" ;;
+		*) echo "Unsupported format" ;;
+	esac
+}}
+
+# Change wallpaper
+cmd wall ${{
+	cp "$f" ~/.config/wall.jpg
+	killall hyprpaper
+	nohup hyprpaper &
+}}
+
