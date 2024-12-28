@@ -1,0 +1,28 @@
+# Add blank line
+add_newline = true
+
+# 
+"$schema" = 'https://starship.rs/config-schema.json'
+
+format ="""
+[┌──](bold green)[$directory$rust$package$git_branch$git_status$python](bold red)
+[└─>](bold green)"""
+
+right_format = """
+$time\
+"""
+
+
+[package]
+disabled = false
+
+[python]
+format = '\[[${symbol}${pyenv_prefix}(${version})(\($virtualenv\))]($style)\]'
+symbol = ' '
+
+[time]
+disabled = false
+format = "[ $time]($style)"
+time_format = "%R"
+utc_time_offset = "1"
+style = "dimmed white"

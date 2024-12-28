@@ -1,0 +1,51 @@
+
+let mapleader =" "
+
+" Basic
+set nocompatible
+filetype on
+filetype plugin on
+syntax on
+set encoding=utf-8
+
+" Show line numbers
+set number relativenumber
+
+" Autocomplete
+set wildmode=list:longest,list:full
+" Disable auto-comment
+autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+
+" Always show x lines below and above cursor
+set scrolloff=10
+
+" Indentation
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+
+set autoindent
+
+" Highlight position
+set cursorline
+highlight Cursorline cterm=bold ctermbg=black
+set cursorcolumn
+highlight Cursorcolumn ctermbg=black
+
+" Status bar
+set laststatus=1
+
+" Search
+set ignorecase
+set hlsearch
+set incsearch
+
+" Split open at bottom or right, like a non-retard, unlike vim default
+set splitbelow splitright
+" Shortcut splits
+map <C-h> <C-w>h
+map <C-j> <C-w>j
+map <C-k> <C-w>k
+map <C-l> <C-w>l
+
+set clipboard+=unnamedplus

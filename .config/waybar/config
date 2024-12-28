@@ -1,0 +1,26 @@
+//	__        __          _
+//	\ \      / /_ _ _   _| |__   __ _ _ __
+//	 \ \ /\ / / _` | | | | '_ \ / _` | '__|
+//	  \ V  V / (_| | |_| | |_) | (_| | |
+//	   \_/\_/ \__,_|\__, |_.__/ \__,_|_|
+//	                |___/
+//	Kemppe (2024)
+//
+//
+{
+	// Include Modules
+	"include": ["~/.config/waybar/modules.json"],
+
+	"layer": "top", 	
+    "position": "top", // Top,Bottom,Left,Right
+    "height": 14, 
+	// "width": 1280, 
+    "spacing": 4, // Gaps between modules (4px)
+
+    "modules-left": ["custom/arch", "hyprland/window", "hyprland/mode", "hyprland/scratchpad", "custom/media", "tray"],
+
+    "modules-center": ["hyprland/workspaces"],
+
+    "modules-right": ["pulseaudio", "pulseaudio#mic", "network", "temperature", "battery", "battery#bat2", "clock"],
+}
+

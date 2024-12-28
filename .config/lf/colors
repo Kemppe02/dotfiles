@@ -1,0 +1,143 @@
+# vim:ft=dircolors
+
+# file types (with matching order)
+ln      01;36   # LINK
+or      31;01   # ORPHAN
+tw      34      # STICKY_OTHER_WRITABLE
+ow      34      # OTHER_WRITABLE
+st      01;34   # STICKY
+di      01;36   # DIR
+pi      33      # FIFO
+so      01;35   # SOCK
+bd      33;01   # BLK
+cd      33;01   # CHR
+su      37;41   # SETUID
+sg      01;32   # SETGID
+ex      01;32   # EXEC
+fi      00      # FILE
+
+# archives or compressed (dircolors defaults)
+*.tar   03;31
+*.tgz   03;31
+*.arc   03;31
+*.arj   03;31
+*.taz   03;31
+*.lha   03;31
+*.lz4   03;31
+*.lzh   03;31
+*.lzma  03;31
+*.tlz   03;31
+*.txz   03;31
+*.tzo   03;31
+*.t7z   03;31
+##*.zip   01;38;5;61
+*.zip   03;31
+*.z     03;31
+*.dz    03;31
+*.gz    03;31
+*.lrz   03;31
+*.lz    03;31
+*.lzo   03;31
+*.xz    03;31
+*.zst   03;31
+*.tzst  03;31
+*.bz2   03;31
+*.bz    03;31
+*.tbz   03;31
+*.tbz2  03;31
+*.tz    03;31
+*.deb   03;31
+*.rpm   03;31
+*.jar   03;31
+*.war   03;31
+*.ear   03;31
+*.sar   03;31
+*.rar   03;31
+*.alz   03;31
+*.ace   03;31
+*.zoo   03;31
+*.cpio  03;31
+*.7z    03;31
+*.rz    03;31
+*.cab   03;31
+*.wim   03;31
+*.swm   03;31
+*.dwm   03;31
+*.esd   03;31
+
+# image formats (dircolors defaults)
+*.avif	00;38;5;215
+*.heic	00;38;5;215
+*.jpg   00;93
+*.jpeg  00;93
+*.mjpg  00;33
+*.mjpeg 00;33
+*.webp  00;38;5;215
+*.gif   00;33
+*.bmp   00;33
+*.pbm   00;33
+*.pgm   00;33
+*.ppm   00;33
+*.tga   00;33
+*.xbm   00;33
+*.xpm   00;33
+*.tif   00;33
+*.tiff  00;33
+*.png   00;93	# 00;38;5;215
+*.svg   00;38;5;215
+*.svgz  00;33
+*.mng   00;33
+*.pcx   00;33
+*.mov   00;38;5;213
+*.mpg   00;35
+*.mpeg  00;35
+*.m2v   00;33
+*.mkv   00;33
+*.webm  00;35
+*.ogm   00;33
+*.mp4   00;38;5;213
+*.m4v   00;38;5;213
+*.mp4v  00;38;5;213
+*.vob   00;35
+*.qt    00;33
+*.nuv   00;33
+*.wmv   00;35
+*.asf   00;33
+*.rm    00;33
+*.rmvb  00;33
+*.flc   00;33
+*.avi   00;35
+*.fli   00;33
+*.flv   00;35
+*.gl    00;33
+*.dl    00;33
+*.xcf   00;35
+*.xwd   00;33
+*.yuv   00;33
+*.cgm   00;33
+*.emf   00;33
+*.ogv   00;33
+*.ogx   00;33
+
+# audio formats (dircolors defaults)
+*.aac   00;36
+*.au    00;36
+*.flac  00;36
+*.m4a   00;36
+*.mid   00;36
+*.midi  00;36
+*.mka   00;36
+*.mp3   00;36
+*.mpc   00;36
+*.ogg   00;36
+*.ra    00;36
+*.wav   00;36
+*.oga   00;36
+*.opus  00;36
+*.spx   00;36
+*.xspf  00;36
+
+# documents
+*.pdf	00;31
+*.xopp	00;35
+*.md	00;34
