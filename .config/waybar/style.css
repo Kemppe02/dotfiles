@@ -3,17 +3,16 @@
     font-family: "FiraCodeNerdFont", FontAwesome, Roboto, Helvetica, Arial, sans-serif;
     font-size: 10px;
 	min-height: 0;
-	margin: 0px;
 }
 
 window#waybar {
-    background-color: rgba(0, 0, 0, 0.1);
+    background-color: rgba(0, 0, 0, 0.7);
     /*border-bottom: 3px solid rgba(100, 114, 125, 0.5);*/
-    color: #ffffff;
+    color: #E6E6FA;
     /*transition-property: background-color;*/
+	border: 3px solid rgba(200,200,220,0.7);
+	border-radius: 10px;
     transition-duration: .5s;
-    padding: 0; /**/
-    margin: 0; /**/
 }
 
 window#waybar.hidden {
@@ -54,26 +53,26 @@ button:hover {
 
 
 #window {
-	background: #ffffff;
-	color: #000000;
+	background: rgba(0, 0, 0, 0);
+	color: #ffffff;
 
 	font-weight: bold;
 	border-radius: 7px;
-	margin: 2px;
-	padding: 0px 5px;
+	margin: 0px 10px;
+	padding: 5px 0px 5px 4px;
 }
 
 #workspaces {
    /* margin: 0px 1px;*/ /* box margin top, right, bottom, left*/
 	border-radius: 7px;
-	margin: 4px;
-	padding: 0px;
-	background: rgba(0, 0, 0, 0.6);
+	margin: 0px 10px;
+	padding: 0px 0px;
+	background: rgba(0, 0, 0, 1);
 }
 
 #workspaces button {
     background-color: transparent;
-    color: #ffffff;
+    color: #EE82EE;
 	padding: 0px 0px;
 	margin: 0px 0px;
 	border-radius: 7;
@@ -98,11 +97,11 @@ button:hover {
 
 #workspaces button.active {
 	font-weight: bold;
-	color: #1793d0;
-	background-color: #ffffff;
+	color: #9E30EE;
+	background-color: #E0B0FF;
 	border-radius: 7px;
-	padding: 0px 5px;
-	min-width: 20px;
+	padding: 0px 0px;
+	min-width: 0px;
 }
 
 #mode {
@@ -146,25 +145,21 @@ button:hover {
 }
 
 #clock {
-    background-color: rgba(0, 0, 0, 1);
+    background-color: rgba(0,0,0,0);
     color: #ffffff;
 	font-weight: bold;
-	margin: 2px 2px 2px 0px;
-	padding: 0px 2px;
+	margin: 0px 6px 14px 6px; /* 14=8+3+3, spacing+margin+border*/
+	padding: 0px 0px;
 }
 
 #battery {
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: rgba(0, 0, 0, 0);
     color: #ffffff;
-	margin: 2px 3px 2px 0px;
-	padding: 0px 8px 0px 2px;
 }
 
 #battery.charging, #battery.plugged {
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: rgba(0, 0, 0, 0);
     color: #26A65B;
-	margin: 2px 3px 2px 0px;
-	padding: 0px 8px 0px 2px;
 }
 
 @keyframes blink {
@@ -175,10 +170,8 @@ button:hover {
 }
 
 #battery.critical:not(.charging) {
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: rgba(0, 0, 0, 0);
     color: #ffffff;
-	margin: 2px 3px 2px 0px;
-	padding: 0px 8px 0px 2px;
 
     animation-name: blink;
     animation-duration: 0.5s;
@@ -187,19 +180,23 @@ button:hover {
     animation-direction: alternate;
 }
 
+#battery.warning:not(.charging) {
+	color: #ffff00
+}
+
 label:focus {
     background-color: #000000;
 }
 
 #cpu {
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: rgba(100, 0, 0, 1);
     color: #ffffff;
 	margin: 2px 2px 2px 0px;
 	padding: 0px 8px 0px 2px;
 }
 
 #memory {
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: rgba(100, 0, 0, 1);
     color: #ffffff;
 	margin: 2px 2px 2px 0px;
 	padding: 0px 8px 0px 2px;
@@ -216,7 +213,7 @@ label:focus {
 }
 
 #network {
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: rgba(0, 0, 0, 0);
     color: #ffffff;
 	margin: 2px 2px 2px 0px;
 	padding: 0px 3px 0px 2px;
@@ -227,7 +224,7 @@ label:focus {
 }
 
 #pulseaudio {
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: rgba(0, 0, 0, 0);
     color: #ffffff;
 	margin: 2px 2px 2px 0px;
 	padding: 0px 3px 0px 2px;
@@ -238,7 +235,7 @@ label:focus {
 }
 
 #pulseaudio.muted {
-    background-color: #000000;
+    background-color: rgba(0,0,0,0);
     color: #ff3333;
 }
 
@@ -274,7 +271,7 @@ label:focus {
 }
 
 #temperature {
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: rgba(0, 0, 0, 0);
     color: #ffffff;
 	margin: 2px 2px 2px 0px;
 	padding: 0px 3px 0px 2px;
@@ -346,10 +343,8 @@ label:focus {
 }
 
 #keyboard-state {
-    background: #97e1ad;
-    color: #000000;
-    padding: 0 0px;
-    margin: 0 5px;
+    background: rgba(0, 0, 0, 0);
+    color: rgba(0,0,0,0);
     min-width: 16px;
 }
 
@@ -358,7 +353,8 @@ label:focus {
 }
 
 #keyboard-state > label.locked {
-    background: rgba(0, 0, 0, 0.2);
+    background: rgba(0, 0, 0, 0);
+	color: #ff3333;
 }
 
 #scratchpad {
@@ -372,5 +368,5 @@ label:focus {
 #custom-arch {
 	font-size: 15px;
 	color: #1793d0;
-	margin: 0px 10px 0px 10px;
+	margin: 14px 4px 0px 0px; /* 14=8+3+3, spacing+margin+border*/
 }
