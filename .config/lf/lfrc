@@ -35,6 +35,7 @@ map gD cd ~/documents
 map gi cd ~/images
 map gv cd ~/videos
 map gs cd ~/school
+map gu cd /run/media/axel
 
 # Rename file
 #cmd rename %[ -e $1 ] && printf "file exists" || mv $f $1

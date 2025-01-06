@@ -1,3 +1,4 @@
 #!/bin/sh
 
-swaync-client --reload-config
+killall swaync
+swaync & disown
