@@ -48,4 +48,15 @@ map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
 
+" Remaps
+nnoremap <leader>e :Ex<cr>
+
+inoremap { {}<left>
+inoremap {<cr> {<cr>}<left><cr><up><tab>
+
 set clipboard+=unnamedplus
+
+" Theme
+colorscheme dracula
+hi Normal guibg=NONE ctermbg=NONE " Fix background transparent
+

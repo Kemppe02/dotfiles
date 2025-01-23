@@ -16,3 +16,19 @@ export PATH="${PATH}:${HOME}/.local/bin/"
 
 # Spicetify
 export PATH=$PATH:/home/axel/.spicetify
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/axel/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/axel/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/axel/miniconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/axel/miniconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+

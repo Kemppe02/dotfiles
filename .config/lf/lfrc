@@ -28,6 +28,7 @@ map xt extract
 map . set hidden!
 map b bulk-rename
 map r :rename; cmd-delete-home
+map mn mount-server
 
 # Map movements
 map gd cd ~/downloads
@@ -36,6 +37,7 @@ map gi cd ~/images
 map gv cd ~/videos
 map gs cd ~/school
 map gu cd /run/media/axel
+map gm cd /mnt/ubserver
 
 # Rename file
 #cmd rename %[ -e $1 ] && printf "file exists" || mv $f $1
@@ -108,4 +110,8 @@ cmd bulk-rename ${{
     done
     rm -- "$old" "$new"
     lf -remote "send $id unselect"
+}}
+
+cmd mount-server ${{
+	sudo sshfs -o allow_other,default_permissions axel@192.168.3.17:/media /mnt/ubserver
 }}
