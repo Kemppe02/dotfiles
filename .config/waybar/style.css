@@ -58,7 +58,7 @@ button:hover {
 
 	font-weight: bold;
 	border-radius: 7px;
-	margin: 0px 10px;
+	margin: 0px 7px;
 	padding: 5px 0px 5px 4px;
 }
 
@@ -148,7 +148,7 @@ button:hover {
     background-color: rgba(0,0,0,0);
     color: #ffffff;
 	font-weight: bold;
-	margin: 0px 6px 14px 6px; /* 14=8+3+3, spacing+margin+border*/
+	margin: 0px 3px 14px 3px; /* 14=8+3+3, spacing+margin+border*/
 	padding: 0px 0px;
 }
 

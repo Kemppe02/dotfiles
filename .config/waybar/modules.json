@@ -91,15 +91,17 @@
     },
 
     "tray": {
-        "icon-size": 16,
+        "icon-size": 14,
         "spacing": 10
 		//"show-passive-items": true
     },
 
     "clock": {
 		"tooltip": false,
+		"format": "<big>{:%H\n%M}</big>",
+		//"format": "{:%H\n%M}",
         //"tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "format-alt": "{:%Y-%m-%d}"
+        "format-alt": "{:%d-%m\n%Y}"
     },
 
     "cpu": {
