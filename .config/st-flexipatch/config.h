@@ -427,15 +427,17 @@ static Shortcut shortcuts[] = {
 	{ XK_ANY_MOD,           XK_Print,       printsel,        {.i =  0} },
 	{ MODKEY,				XK_z,			zoom,            {.f = +1} },
 	{ MODKEY,				XK_x,			zoom,            {.f = -1} },
-	{ MODKEY,				XK_equal,		zoomreset,       {.f =  0} },
+	{ MODKEY,				XK_0,			zoomreset,       {.f =  0} },
 	{ MODKEY,				XK_c,           clipcopy,        {.i =  0} },
 	{ MODKEY,				XK_v,           clippaste,       {.i =  0} },
 	#if ALPHA_PATCH
 	{ MODKEY,				XK_o,           changealpha,     {.f = +0.05} },
 	{ MODKEY,				XK_p,           changealpha,     {.f = -0.05} },
+	// No work{ MODKEY,				XK_0,			changealpha,     {.f = 0.8} },
 	#if ALPHA_FOCUS_HIGHLIGHT_PATCH
 	{ MODKEY|ControlMask,   XK_o,           changealphaunfocused, {.f = +0.05} },
 	{ MODKEY|ControlMask,   XK_p,           changealphaunfocused, {.f = -0.05} },
+	// No work{ MODKEY|ControlMask,	XK_0,			changealphaunfocused, {.f = 0.5} },
 	#endif // ALPHA_FOCUS_HIGHLIGHT_PATCH
 	#endif // ALPHA_PATCH
 	#if FULLSCREEN_PATCH
