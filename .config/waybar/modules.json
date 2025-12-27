@@ -7,11 +7,18 @@
 		"tooltip": false
 	},
 
+	// Custom Tailscale
+	"custom/tailscale": {
+		"format": "󱗼",
+		"on-click": "exec ~/.config/waybar/scripts/waybar_tailscale.sh --toggle",
+		"tooltip": false
+	},
+
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
-        "format": "{volume}\n{icon}",
-        "format-bluetooth": "{volume}\n{icon}",
-        "format-bluetooth-muted": "{volume}\n ",
+        "format": "{volume} {icon}",
+        "format-bluetooth": "{volume} {icon}",
+        "format-bluetooth-muted": "{volume}  ",
 		"format-bt": "",
         "format-muted": " ",
         "format-icons": {
@@ -35,31 +42,29 @@
 
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
-		"rotate": 90,
-
 		"on-click": "nm-connection-editor",
-        "format-wifi": "{icon} {essid}", //{essid} 
+        "format-wifi": "{icon} {essid}", //{essid}
         "format-ethernet": "{ipaddr}/{cidr} ",
         "tooltip-format": "{signalStrength}%", // "{ifname} via {gwaddr} ",
         "format-linked": "{ifname} (No IP) ",
-        "format-disconnected": "󰤫 ",
-		"format-disabled": "󰤮 ",
+        "format-disconnected": "󰤫",
+		"format-disabled": "󰤮",
         //"format-alt": "{ifname}: {ipaddr}/{cidr}",
 		"format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"]
     },
-	
+
     "battery": {
         "states": {
             // "good": 95,
             "warning": 30,
             "critical": 20
         },
-        "format": "{capacity}\n{icon}",
+        "format": "{capacity} {icon}",
         "format-charging": "{capacity} 󰂄",
         "format-plugged": "{capacity}% ",
         // "format-good": "", // An empty format will hide the module
         // "format-full": "",
-        "format-icons": ["", "", "", "", ""]
+        "format-icons": [" ", " ", " ", " ", " "]
     },
 
     "battery#bat2": {
@@ -98,10 +103,9 @@
 
     "clock": {
 		"tooltip": false,
-		"format": "<big>{:%H\n%M}</big>",
-		//"format": "{:%H\n%M}",
+		"format": "<big>{:%H:%M}</big>",
         //"tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "format-alt": "{:%d-%m\n%Y}"
+        "format-alt": "{:%d-%m-%Y}"
     },
 
     "cpu": {
@@ -112,7 +116,7 @@
     "memory": {
         "format": "{}% "
     },
-	
+
     "custom/media": {
         "format": "{icon} {}",
         "return-type": "json",
@@ -124,8 +128,9 @@
         "escape": true,
         "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
         // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
-    }, 
+    },
 
+	/*Used for submaps in hyprland conf. Tells you if you're in a special mode.*/
     "hyprland/mode": {
         "format": "<span style=\"italic\">{}</span>"
     },
@@ -168,6 +173,9 @@
     "hyprland/workspaces": {
         "disable-scroll": true,
         "all-outputs": true,
+		"active-only": false,
+			"show-special": true,
+			"special-visible-only": true,
         "warp-on-scroll": false,
         "format": "{icon}",
         "format-icons": {
@@ -181,16 +189,19 @@
             "8": "八",
             "9": "九",	//"󰿎",
             "10": "十", //"󰝚",
-            "urgent": "",
+            "urgent": "",
             "focused": "",
-            "default": ""
-        }
+            "default": "󰨸"
+        },
+			"persistent-workspaces": {
+				"*": 10
+			}
     },
 
     "keyboard-state": {
         "numlock": false,
         "capslock": true,
-        "format": "{name}\n {icon}",
+        "format": "{name} {icon}",
         "format-icons": {
             "locked": "",
             "unlocked": ""
@@ -199,7 +210,6 @@
 
 	"hyprland/window": {
 		"format": "{}",
-		"rotate": 90,
 		"max-length": 50,
 		"rewrite": {
 			"": "Desktop",
