@@ -22,17 +22,19 @@
 		"hyprland/window",
 		"hyprland/mode",
 		"hyprland/scratchpad",
-		"custom/media",
 		"tray",
 		"custom/tailscale",
-		"keyboard-state"
+		"keyboard-state",
+		"custom/media",
+		"mpd"
 		],
 
     "modules-center": [
-		"hyprland/workspaces", 
+		"hyprland/workspaces",
 		"hyprland/scratchpad"],
 
     "modules-right": [
+		"mpris",
 		"pulseaudio",
 		"pulseaudio#mic",
 		"network",

@@ -118,7 +118,7 @@
     },
 
     "custom/media": {
-        "format": "{icon} {}",
+        "format": "{icon} test",
         "return-type": "json",
         "max-length": 40,
         "format-icons": {
@@ -126,8 +126,8 @@
             "default": "🎜"
         },
         "escape": true,
-        "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
-        // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
+        //"exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
+        "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
     },
 
 	/*Used for submaps in hyprland conf. Tells you if you're in a special mode.*/
@@ -144,7 +144,8 @@
     },
 
     "mpd": {
-        "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ⸨{songPosition}|{queueLength}⸩ {volume}% ",
+        //"format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ⸨{songPosition}|{queueLength}⸩ {volume}% ",
+		"format": "{stateIcon} {artist} - {title}",
         "format-disconnected": "Disconnected ",
         "format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped ",
         "unknown-tag": "N/A",
@@ -169,6 +170,22 @@
         "tooltip-format": "MPD (connected)",
         "tooltip-format-disconnected": "MPD (disconnected)"
     },
+
+	"mpris": {
+		"format": "{player_icon} {status_icon} {artist} - {title}",
+		"format-paused": "{player_icon} {status_icon} <i>{artist} - {title}</i>",
+		"player-icons": {
+			"default": "🎜",
+			"spotify": "<span color=\"#1DB954\"></span> ",
+			"firefox": "<span color=\"#E66000\">󰈹</span>",
+			"mpv": "🎬"
+		},
+		"status-icons": {
+            "paused": "▶",
+            "playing": "󰏤"
+		}
+
+	},
 
     "hyprland/workspaces": {
         "disable-scroll": true,
