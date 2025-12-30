@@ -14,12 +14,20 @@
 		"tooltip": false
 	},
 
+	"group/pulse": {
+		"orientation": "inherit",
+		"drawer": {
+			"transition-duration": 200,
+			"children-class": "not-power",
+			"transition-left-to-right": true
+		},
+		"modules": ["pulseaudio", "pulseaudio/slider"]
+	},
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
         "format": "{volume} {icon}",
-        "format-bluetooth": "{volume} {icon}",
+        "format-bluetooth": "{volume} <span color=\"#0082fc\">{icon}</span>",
         "format-bluetooth-muted": "{volume}  ",
-		"format-bt": "",
         "format-muted": " ",
         "format-icons": {
             "headphone": " ",
@@ -33,11 +41,17 @@
         "on-click": "st pulsemixer --color 1",
 		"reverse-scrolling": true
     },
+	"pulseaudio/slider": {
+		"min": 0,
+		"max": 100,
+		"orientation": "horizontal"
+	},
 
 	"pulseaudio#mic":{
 		"format": "{format_source}",
 		"format-source": "",
-		"format-source-muted": ""
+		"format-source-muted": "",
+		"on-click": "pactl set-source-mute 2 toggle"
 	},
 
     "network": {
@@ -71,12 +85,27 @@
         "bat": "BAT2"
     },
 
+	"group/brightness": {
+		"orientation": "inherit",
+		"drawer": {
+			"transition-duration": 200,
+			"children-class": "not-power",
+			"transition-left-to-right": true,
+		},
+		"modules": ["backlight", "backlight/slider"]
+	},
     "backlight": {
         // "device": "acpi_video1",
         "format": "{percent}% {icon}",
         "format-icons": ["", "", "", "", "", "", "", "", ""],
 		"reverse-scrolling": true
     },
+	"backlight/slider": {
+		"min": 0,
+		"max": 100,
+		"orientation": "horizontal"
+	},
+
 
     "temperature": {
         // "thermal-zone": 2,
@@ -102,8 +131,9 @@
     },
 
     "clock": {
-		"tooltip": false,
-		"format": "<big>{:%H:%M}</big>",
+		"tooltip": true,
+		"tooltip-format": "{:%Y-%m-%d}",
+		"format": "{:%H:%M}",
         //"tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
         "format-alt": "{:%d-%m-%Y}"
     },
@@ -174,6 +204,7 @@
 	"mpris": {
 		"format": "{player_icon} {status_icon} {artist} - {title}",
 		"format-paused": "{player_icon} {status_icon} <i>{artist} - {title}</i>",
+		"tooltip-format": "{album}",
 		"player-icons": {
 			"default": "🎜",
 			"spotify": "<span color=\"#1DB954\"></span> ",
@@ -183,13 +214,14 @@
 		"status-icons": {
             "paused": "▶",
             "playing": "󰏤"
-		}
+		},
+		"max-length": 40
 
 	},
 
     "hyprland/workspaces": {
         "disable-scroll": true,
-        "all-outputs": true,
+        //"all-outputs": true,
 		"active-only": false,
 			"show-special": true,
 			"special-visible-only": true,
@@ -218,16 +250,17 @@
     "keyboard-state": {
         "numlock": false,
         "capslock": true,
-        "format": "{name} {icon}",
+        "format": "{icon}", //{name}
+		"format-unlocked": "",
         "format-icons": {
-            "locked": "",
-            "unlocked": ""
+            "locked": "Caps ",
+            "unlocked": ""
         }
     },
 
 	"hyprland/window": {
 		"format": "{}",
-		"max-length": 50,
+		"max-length": 30,
 		"rewrite": {
 			"": "Desktop",
 			"(.*) - VIM": "$1"

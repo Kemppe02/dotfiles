@@ -83,7 +83,7 @@ button:hover {
 #workspaces {
 	border: 1px solid #EE82EE;
 	border-radius: 14px;
-	margin: 4px 0px;
+	margin: 4px 4px;
 	background: rgba(0, 0, 0, 1);
 }
 
@@ -134,22 +134,25 @@ button:hover {
 #disk,
 #temperature,
 #backlight,
+#brightness, /*Group*/
 #network,
 #pulseaudio,
-#pulseaudio#mic,
+#pulse, /*Group*/
+#pulseaudio.mic,
 #wireplumber,
 #custom-media,
+#keyboard-state,
 #tray,
 #mode,
 #idle_inhibitor,
 #custom-tailscale,
 #scratchpad,
+#mpris,
 #mpd {
 
 	color: #EE82EE;
 	background: #000000;
 	border: 1px solid #EE82EE;
-	font-weight: bold;
 	font-style: normal;
 
 	padding: 0px 4px;
@@ -225,10 +228,39 @@ label:focus {
     color: #000000;
 }
 
-#backlight {
-    background-color: #bfcfdf;
-    color: #000000;
+#brightness {
+	padding: 0px;
 }
+#backlight {
+	margin: 0px;
+	padding: 0px 6px 0px 4px;
+	border: 0;
+}
+	#backlight-slider {
+		background: transparent;
+		margin: 0px 4px;
+		padding: 0px;
+	}
+	#backlight-slider slider {
+		min-height: 6px;
+		min-width: 6px;
+		border-radius: 50%;
+		margin: -5px -5px;
+		background: #fff;
+	}
+	#backlight-slider trough {
+		min-height: 2px;
+		min-width: 50px;
+		border-radius: 8px;
+		background: #000000;
+		padding: 0px 4px 0px 0px;
+	}
+	#backlight-slider highlight {
+		border-radius: 2px;
+		/*border-color: #EE82EE;*/
+		border: 0;
+		background: #EE82EE;
+	}
 
 #network {
 }
@@ -239,15 +271,42 @@ label:focus {
 	padding: 0px 8px 0px 4px;
 }
 
-#pulseaudio {
-	border-radius: 14px;
-	padding: 0px 8px 0px 4px;
-
+#pulse {
+	padding: 0px;
 }
+#pulseaudio {
+	margin: 0px;
+	border: 0px;
+	padding: 0px 6px 0px 4px;
+}
+	#pulseaudio-slider {
+		background: transparent;
+		margin: 0px 4px;
+		padding: 0px;
+	}
+	#pulseaudio-slider slider {
+		min-height: 6px;
+		min-width: 6px;
+		border-radius: 50%;
+		margin: -5px -5px;
+		background: #fff;
+	}
+	#pulseaudio-slider trough {
+		min-height: 2px;
+		min-width: 50px;
+		border-radius: 8px;
+		background: #000000;
+		padding: 0px 4px 0px 0px;
+	}
+	#pulseaudio-slider highlight {
+		border-radius: 2px;
+		/*border-color: #EE82EE;*/
+		border: 0;
+		background: #EE82EE;
+	}
+
 
 #pulseaudio.bluetooth {
-	color: #0082fc;
-	border-color: #0082fc;
 }
 
 #pulseaudio.muted {
@@ -333,6 +392,9 @@ label:focus {
     color: #2a5c45;
 }
 
+#mpris {
+}
+
 #mpd.disconnected {
     background-color: #f53c3c;
 }
@@ -359,18 +421,15 @@ label:focus {
 }
 
 #keyboard-state {
-    background: rgba(0, 0, 0, 0);
-    color: rgba(0,0,0,0);
-    min-width: 16px;
+	border: 0;
+	background: transparent;
+	padding: 0;
+	margin: 0;
 }
 
-#keyboard-state > label {
-    padding: 0 5px;
-}
-
-#keyboard-state > label.locked {
-    background: rgba(0, 0, 0, 0);
+#keyboard-state label.locked {
 	color: #ff3333;
+	padding: 0px 4px;
 }
 
 #scratchpad {
@@ -391,3 +450,4 @@ label:focus {
 	color: #1793d1;
 	padding: 0px 10px 0px 0px; /*Make up for icon size*/
 }
+

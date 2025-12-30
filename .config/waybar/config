@@ -23,10 +23,10 @@
 		"hyprland/mode",
 		"hyprland/scratchpad",
 		"tray",
-		"custom/tailscale",
-		"keyboard-state",
 		"custom/media",
-		"mpd"
+		//"mpd",
+		"keyboard-state",
+		"mpris"
 		],
 
     "modules-center": [
@@ -34,15 +34,18 @@
 		"hyprland/scratchpad"],
 
     "modules-right": [
-		"mpris",
-		"pulseaudio",
+		"group/brightness",
+		"group/pulse",
 		"pulseaudio#mic",
+		"custom/tailscale",
 		"network",
 		"temperature",
 		"battery",
 		"battery#bat2",
 		"clock"]
 },
+
+
 {
 
 	// Include Modules
@@ -61,11 +64,13 @@
 		"hyprland/scratchpad",
 		"custom/media",
 		"tray",
-		"keyboard-state"
+		"keyboard-state",
+		"mpris"
 		],
 
     "modules-center": [
-		"hyprland/workspaces"],
+		"hyprland/workspaces",
+		"hyprland/scratchpad"],
 
     "modules-right": [
 		"pulseaudio",
