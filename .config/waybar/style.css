@@ -457,4 +457,10 @@ padding: 0px 6px 0px 4px;
 #custom-pacman {
 	padding-right: 10px;
 }
+#custom-shutdown,
+#custom-reboot,
+#custom-suspend,
+#custom-hibernate {
+	padding: 0px 8px;
+}
 

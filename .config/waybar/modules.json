@@ -296,6 +296,41 @@
 		"format": "{}",
 		"tooltip": true,
 		"interval": 3600
+	},
+
+	"group/power": {
+		"orientation": "inherit",
+		"drawer": {
+			"transition-duration": 200,
+			"children-class": "not-power",
+			"transition-left-to-right": true
+		},
+		"modules": ["custom/arch",
+					"custom/shutdown",
+					"custom/reboot",
+					"custom/suspend",
+					"custom/hibernate"]
+	},
+
+	"custom/shutdown": {
+		"format" : "⏻",
+        "format-tooltip": "Shutdown",
+		"on-click": "shutdown"
+	},
+	"custom/reboot": {
+		"format": "",
+		"format-tooltip": "Reboot",
+		"on-click": "reboot"
+	},
+	"custom/suspend": {
+		"format": "",
+		"format-tooltip": "Suspend",
+		"on-click": "systemctl suspend"
+	},
+	"custom/hibernate": {
+		"format": "󰤄",
+		"format-tooltip": "Hibernate",
+		"on-click": "systemctl hibernate"
 	}
 
 	//"bluetooth": {},
