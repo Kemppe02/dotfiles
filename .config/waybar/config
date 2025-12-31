@@ -19,19 +19,22 @@
 
     "modules-left": [
 		"custom/arch",
-		"hyprland/window",
+		//"hyprland/window",
+		"mpris",
 		"hyprland/mode",
 		"hyprland/scratchpad",
 		"tray",
-		"custom/media",
 		//"mpd",
-		"keyboard-state",
-		"mpris"
+		//"custom/media"
+		"keyboard-state"
 		],
 
     "modules-center": [
+		"custom/weather",
 		"hyprland/workspaces",
-		"hyprland/scratchpad"],
+		"hyprland/scratchpad",
+		"custom/pacman"
+		],
 
     "modules-right": [
 		"group/brightness",
